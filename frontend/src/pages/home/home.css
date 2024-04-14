@@ -1,8 +1,58 @@
-* {
-    margin: 0;
-    padding: 0;
+@font-face {
+	font-family: chillaxBold;
+	src: url('../../../assets/fonts/Chillax-Bold.otf');
+    font-weight: bold;
 }
 
-.home {
-    background-color: aqua;
+.total_accounts {
+    width: 45%;
+    color: whitesmoke;
+
+    border-radius: 25px;
+
+    background-color: #5727a6;
+}
+
+.total_accounts {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.total_balance {
+    display: flex;
+    align-items: start;
+    margin-left: 2.5%;
+    flex-direction: column;
+    
+}
+
+.total_balance .text, .incame_expanse .text {
+    
+    font-size: 1.5rem;
+}
+
+.total_balance .amount, .incame_expanse .amount {
+    font-style: italic;
+    font-size: 1.4rem;
+
+}
+
+.textTitle {
+    font-family: 'chillaxBold';
+    margin-top: 2.5%;
+    font-size: 2rem;
+}
+
+.incame_expanse {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 2.5%;
+}
+
+.incame_expanse .incame, .incame_expanse .expanse {
+    flex: 50%;
 }

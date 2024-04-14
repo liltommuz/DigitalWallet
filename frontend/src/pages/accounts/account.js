@@ -5,6 +5,7 @@ import './account.css'
 function Accounts() {
   	return (
 		<div className='container'>
+			
 	  		<h1>Welcome back _NomeUtente_</h1>
 			<p>In this page you will see the total amount of money that you possess</p>
 			<p>and also your last transactions. With the right filters you could be</p>

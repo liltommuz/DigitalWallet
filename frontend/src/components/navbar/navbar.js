@@ -6,14 +6,13 @@ import { SidebarData } from './sidebarData';
 import './navbar.css';
 import { IconContext } from 'react-icons';
 
+
 function Navbar() {
     return (
         <>
             <IconContext.Provider value={{ color: '#fff' }}>
                 <div className='navbar'>
-                    <Link to='#' className='menu-bars'>
-                        <FaIcons.FaBars />
-                    </Link>
+                    <img src={'./images/logo_2.png'} className='logo'/>
                 </div>
                 <nav className='nav-menu'>
                     <ul className='nav-menu-items'>
