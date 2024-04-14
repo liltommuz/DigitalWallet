@@ -1,0 +1,45 @@
+@font-face {
+	font-family: chillaxBold;
+	src: url('../../../assets/fonts/Chillax-Bold.otf');
+    font-weight: bold;
+}
+
+.total_accounts {
+    width: 50%;
+    color: whitesmoke;
+
+    border-radius: 25px;
+
+    background-color: #5727a6;
+}
+
+.total_accounts {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.total_balance {
+    display: flex;
+    align-items: start;
+    margin-left: 2.5%;
+    flex-direction: column;
+    
+}
+
+.total_balance .text {
+    font-family: 'chillaxBold';
+    font-size: 2rem;
+}
+
+.total_balance .amount {
+    font-style: italic;
+    font-size: 1.8rem;
+
+}
+
+.incame_expanse {
+    display: flex;
+    flex-direction: row;
+}
+

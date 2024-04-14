@@ -12,30 +12,30 @@ export const SidebarData = [
 		title: 'Home',
 		path: '/',
 		icon: <AiIcons.AiFillHome />,
-		cName: 'nav-text'
+		className: 'nav-text'
 	},
 	{
 		title: 'Accounts',
 		path: '/accounts',
 		icon: <Io5Icons.IoCard />,
-		cName: 'nav-text'
+		className: 'nav-text'
 	},
 	{
 		title: 'Debiti',
-		path: '/debiti',
+		path: '/debts',
 		icon: <GiIcons.GiPayMoney />,
-		cName: 'nav-text'
+		className: 'nav-text'
 	},
 	{
 		title: 'Transazioni',
-		path: '/transazioni',
+		path: '/transactions',
 		icon: <GrIcons.GrTransaction />,
-		cName: 'nav-text'
+		className: 'nav-text'
 	},
 	{
 		title: 'Categorie',
-		path: '/categorie',
+		path: '/categories',
 		icon: <MdIcons.MdOutlineCategory />,
-		cName: 'nav-text'
+		className: 'nav-text'
 	}
 ];

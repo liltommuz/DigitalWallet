@@ -1,11 +1,11 @@
 import React from 'react';
 
-function Home() {
+function Debts() {
   	return (
 		<div className='container'>
-	  		<h1>Home</h1>
+	  		<h1>Debts</h1>
 		</div>
   	);
 }
 
-export default Home;
+export default Debts;
