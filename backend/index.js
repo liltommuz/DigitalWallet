@@ -15,4 +15,6 @@ server.listen(serverPort, () => {
     console.log("Server Status: UP")
 })
 
-
+// Routes
+const { userRoutes } = require('./routes/users/user')
+server.use(userRoutes)
