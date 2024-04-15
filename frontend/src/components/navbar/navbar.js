@@ -1,6 +1,4 @@
-import React, { useState } from 'react';
-import * as FaIcons from 'react-icons/fa';
-import * as AiIcons from 'react-icons/ai';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { SidebarData } from './sidebarData';
 import './navbar.css';
@@ -12,21 +10,27 @@ function Navbar() {
         <>
             <IconContext.Provider value={{ color: '#fff' }}>
                 <div className='navbar'>
-                    <img src={'./images/logo_2.png'} className='logo'/>
+                    <div className='logo_container'>
+                        <img src={'./images/logo.png'} alt='logo' className='logo'/>
+                    </div>
+
+                    <div className='account_container'>
+                        <img src={'./images/default.png'} alt='user_pfp' className='user_pfp'/>
+                        <p className='user_name'>Yaya</p>
+                    </div>
                 </div>
                 <nav className='nav-menu'>
                     <ul className='nav-menu-items'>
                         {
-                            SidebarData.map((item, index) => {
-                            return (
+                            SidebarData.map((item, index) => { return (
                                 <li key={index} className={item.className}>
                                     <Link to={item.path}>
                                         {item.icon}
                                         <span>{item.title}</span>
                                     </Link>
                                 </li>
-                            );
-                        })}
+                            )})
+                        }
                     </ul>
                 </nav>
             </IconContext.Provider>

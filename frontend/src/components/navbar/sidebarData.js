@@ -37,5 +37,11 @@ export const SidebarData = [
 		path: '/categories',
 		icon: <MdIcons.MdOutlineCategory />,
 		className: 'nav-text'
+	},
+	{
+		title: 'Login',
+		path: '/login',
+		icon: <MdIcons.MdOutlineCategory />,
+		className: 'nav-text'
 	}
 ];
