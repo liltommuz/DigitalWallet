@@ -1,6 +1,4 @@
-
-
-.container-all-registrati {
+.container_window {
     color: whitesmoke;
     height: 80%;
     display: flex;
@@ -8,102 +6,65 @@
     align-items: center;
 }
 
-.container_registrati {
+.container_form {
     width: 80%;
     background-color: #393434;
-    padding: 25px 30px;
-    border-radius: 5px;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+    padding: 2vh 1vw;
+    border-radius: 25px;
     text-align: center;
-    align-items: center;
 }
 
-.container_registrati .title{
-    font-weight: 500;
+.container_form .title {
+    font-size: 3rem;
+    margin-bottom: 2vh;
+}
+
+.form .inputs{
+    display: flex;
+    flex-direction: column;
     position: relative;
     text-align: center;
     align-items: center;
 }
 
-.content_registrati form .inputs{
-    text-align: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin: 20px 0 12px 0;
-}
-
-form .inputs .input_box{
+.form .inputs .input_box{
     margin-bottom: 15px;
     width: 60%;
 }
 
-form .input_box span.details{
+.form .input_box .details{
     width: 100%;
     display: block;
     font-weight: 500;
-    margin-bottom: 5px;
+    margin-bottom: 0.8vh;
 }
 
-.inputs .input_box input{
+.inputs .input_box .input{
     color: whitesmoke;
-    height: 45px;
-    width: 100%;
-    outline: none;
-    font-size: 1rem;
-    border-radius: 5px;
-    padding-left: 15px;
-    border: 1px solid #ccc;
-    border-bottom-width: 2px;
-    transition: all 0.3s ease;
     background-color: #5b5454;
 }
 
-.gender_selection {
-    padding: 0.65rem;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
-    font-size: 1rem;
-    width: 100%;
-    color: whitesmoke;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    appearance:none;
-    -moz-appearance:none;
-    -webkit-appearance:none;
-    background-color: #5b5454;
-}
-
-.gender_selection option {
-    font-family:  'Chillax-Variable', sans-serif;
-}
-
-.errors {
-    display: none;
-    color: #ff0000;
-    text-align: center;
-}
-
-form .button{
+.form .button{
    height: 45px;
    margin: 35px 0
 }
 
-form .button button{
-    height: 100%;
+.form .button {
+    height: 5vh;
     width: 60%;
     border-radius: 5px;
     border: none;
-    color: #000000;
-    font-size: 18px;
+    font-size: 1.5rem;
     font-weight: 500;
-    letter-spacing: 1px;
-    cursor: pointer;
     transition: all 0.3s ease;
-    background: #ffffff;
 }
 
 .link {
     color: rgb(64, 64, 230);
 }
 
+.current_errror {
+    color: red;
+    font-size: 1.3rem;
+    margin-top: 1.2vh;
+}

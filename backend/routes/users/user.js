@@ -31,6 +31,8 @@ userRoutes.post('/api/users', (request, response) => {
 
     const { firstName, lastName, email, password } = request.body
 
+    console.log(request.body)
+
     databaseConnection.query(`INSERT INTO users (firstName, lastName, email, password) VALUE ("${firstName}", "${lastName}", "${email}", "${password}");`, (error, result) => {
 
         if(error?.code == 'ER_DUP_ENTRY') return response.send('Indirizzo email già utilizzato.')

@@ -5,6 +5,7 @@ const serverPort = 3001
 
 server.use(express.json())
 server.use(cors())
+server.use(express.urlencoded({ extended: true }));
 
 const { getDatabaseConnection } = require('./functions/databaseConnection')
 const databaseConnection = getDatabaseConnection()
