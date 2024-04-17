@@ -1,11 +1,12 @@
 const express = require("express")
 const server = express()
+
+const bodyParser = require('body-parser')
 const cors = require("cors")
 const serverPort = 3001
 
-server.use(express.json())
 server.use(cors())
-server.use(express.urlencoded({ extended: true }));
+server.use(bodyParser.json())
 
 const { getDatabaseConnection } = require('./functions/databaseConnection')
 const databaseConnection = getDatabaseConnection()

@@ -3,7 +3,7 @@ import axios from 'axios';
 
 import './register.css';
 
-function Register() {
+ function Register() {
 
 	const passwordInputRef = useRef(null)
 	const confirmPasswordInputRef = useRef(null)
@@ -11,32 +11,42 @@ function Register() {
 	const submitButtonRef = useRef(null)
 	const formRef = useRef(null)
 
+
 	useEffect(() => {
+		const form = formRef.current;
 
-		const passwordInput = passwordInputRef.current
-		const form = formRef.current
-
-		let submitButton = submitButtonRef.current
-		let passwordError = passwordErrorRef.current
-
-		form.addEventListener('submit', (event) => {
+	
+		const handleSubmit = (event) => {
 			event.preventDefault();
-			event.stopImmediatePropagation();
-			
+			event.stopPropagation();
+	
 			const formData = new FormData(form);
-			console.log(formData)
-
-			axios({
-				method: 'post',
-				url: 'http://localhost:3001/api/users',
-				headers: { 'Content-Type': 'multipart/form-data' }, // Set Content-Type header
-				data: formData // Pass FormData directly
-			}).then((response) => {
+			console.log(formData);
+			
+			axios.post('http://localhost:3001/api/users', formData, { headers: { "Content-Type": "application/json" } })
+			.then((response) => {
 				console.log(response);
 			})
-
-		});
+			.catch((error) => {
+				console.error('Error:', error);
+			});
+		};
 	
+		form.addEventListener('submit', handleSubmit);
+	
+		// Cleanup function
+		return () => {
+			form.removeEventListener('submit', handleSubmit);
+		};
+	
+	}, []);
+
+	useEffect(() => {
+
+		const submitButton = submitButtonRef.current;
+		const passwordInput = passwordInputRef.current;
+		const passwordError = passwordErrorRef.current;
+
 		passwordInput.addEventListener('input', () => {
 
 			let currentPassword = passwordInput.value
@@ -77,9 +87,6 @@ function Register() {
 
 	}, [])
 
-	useEffect(() => {}, [])
-
-	
   	return (
 		<div className='container'>
 			<section className="container_window">
