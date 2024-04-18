@@ -1,11 +1,37 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { SidebarData } from './sidebarData';
+import SidebarData from './sidebarData';
 import './navbar.css';
 import { IconContext } from 'react-icons';
 
 
 function Navbar() {
+
+    const accountNameRef = useRef(null)
+
+    useEffect(() => {
+
+        const currentHref = window.location.href
+        const currentEmailAuth = sessionStorage.getItem('emailAuth')
+        const sessionName = sessionStorage.getItem('username')
+        const currentAccountName = accountNameRef.current
+
+        sessionName === null || sessionName === 'undefined' ? currentAccountName.innerHTML = 'Login' : currentAccountName.innerHTML = `Benvenuto ${sessionName}`
+
+        window.addEventListener('load', (event) => {
+			
+			event.stopImmediatePropagation()
+			event.preventDefault()
+			
+            if(currentHref !== 'http://localhost:3000/login' && [null, 'undefined'].includes(currentEmailAuth)) {
+                window.location.replace('http://localhost:3000/login')
+
+            }
+
+        })
+
+    }, [])
+
     return (
         <>
             <IconContext.Provider value={{ color: '#fff' }}>
@@ -15,8 +41,8 @@ function Navbar() {
                     </div>
 
                     <div className='account_container'>
-                        <img src={'./images/default.png'} alt='user_pfp' className='user_pfp'/>
-                        <p className='user_name'>Yaya</p>
+                        
+                        <p className='user_name' ref={accountNameRef}>A</p>
                     </div>
                 </div>
                 <nav className='nav-menu'>

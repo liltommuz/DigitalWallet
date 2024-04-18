@@ -4,39 +4,28 @@ const userRoutes = express.Router()
 const { getDatabaseConnection } = require('../../functions/databaseConnection')
 const databaseConnection = getDatabaseConnection()
 
-userRoutes.get('/api/users', (request, response) => {
+userRoutes.post('/api/users/login', (request, response) => {
 
-    let user_id = request.body.user_id
+    let { email, password } = request.body
 
-    if(user_id === undefined) {
-        databaseConnection.query('SELECT * FROM users;', function (error, results) {
-            if (error) throw error;
-            response.send(JSON.stringify(results))
+    databaseConnection.query(`SELECT * FROM users WHERE email = "${email}" AND password = "${password}";`, function (error, results) {
+        if (error) throw error;
+        results.length !== 0 ? response.send(results[0]) : response.send({ notValidLogin: true })
 
-        })
-    
-    } else {
-
-        databaseConnection.query(`SELECT * FROM users WHERE id = "${user_id}";`, function (error, results) {
-            if (error) throw error;
-            response.send(JSON.stringify(results))
-
-        })
-
-    }
+    })
 
 })
 
-userRoutes.post('/api/users', (request, response) => {
+userRoutes.post('/api/users/register', (request, response) => {
 
     const { firstName, lastName, email, password } = request.body
 
-    console.log(request.body)
+    let resultObject
 
     databaseConnection.query(`INSERT INTO users (firstName, lastName, email, password) VALUE ("${firstName}", "${lastName}", "${email}", "${password}");`, (error, result) => {
 
-        if(error?.code == 'ER_DUP_ENTRY') return response.send('Indirizzo email già utilizzato.')
-        response.send(JSON.stringify(result))
+        error?.code == 'ER_DUP_ENTRY' ? resultObject = { emailAlreadyUsed: true } : resultObject = { firstName: firstName, email: email }
+        response.json(resultObject)
 
     })
 })
@@ -47,13 +36,7 @@ userRoutes.delete('/api/users', (request, response) => {
 
     databaseConnection.query(`DELETE FROM users WHERE id = "${user_id}";`, function (error, results) {
         if (error) throw error;
-        if(results.affectedRows == 0) {
-            response.send(`Non è stato cancellato nessun utente.`)
-
-        } else {
-            response.send(`L'utente con ID ${user_id} è stato cancellato.`)
-
-        }
+        results.affectedRows == 0 ? response.send(`Non è stato cancellato nessun utente.`) : response.send(`L'utente con ID ${user_id} è stato cancellato.`)
 
     })
 })

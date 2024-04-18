@@ -8,7 +8,7 @@ function Home() {
   	return (
 		<div className='container'>
 			
-	  		<h1>Welcome tommuz</h1>
+	  		<h1>Welcome new CryptoGuru</h1>
 			<p>In this page you will see the total amount of money that you possess</p>
 			<p>and also your last transactions. With the right filters you could be</p>
 			<p>able to see the sum of the accounts selected or only a certain type of</p>

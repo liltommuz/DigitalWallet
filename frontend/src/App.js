@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
@@ -14,6 +14,33 @@ import Register from './pages/userAccount/register/register';
 import Navbar from './components/navbar/navbar';
 
 function App() {
+
+
+	useEffect(() => {
+
+		const currentHref = window.location.href
+        const currentEmailAuth = sessionStorage.getItem('emailAuth')
+
+		
+
+        window.addEventListener('load', (event) => {
+			
+            if(currentHref !== 'http://localhost:3000/login' && [null, 'undefined'].includes(currentEmailAuth)) {
+				sessionStorage.setItem('notLogged', true)
+                window.location.replace('http://localhost:3000/login')
+                
+            }
+        })
+
+		function handleLocationChange() {
+			console.log('Location has changed:', window.location.href);
+		}
+		  
+		  // Listen for the popstate event
+		window.addEventListener('popstate', handleLocationChange);
+
+
+	}, [])
 
 		return (
 			<>

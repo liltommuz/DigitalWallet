@@ -1,7 +1,7 @@
-import React, { useRef, useEffect } from 'react';
-import axios from 'axios';
+import React, { useRef, useEffect } from 'react'
+import axios from 'axios'
 
-import './register.css';
+import './register.css'
 
  function Register() {
 
@@ -13,39 +13,44 @@ import './register.css';
 
 
 	useEffect(() => {
-		const form = formRef.current;
+		const form = formRef.current
+		const passwordError = passwordErrorRef.current
 
 	
 		const handleSubmit = (event) => {
-			event.preventDefault();
-			event.stopPropagation();
+			event.preventDefault()
+			event.stopPropagation()
 	
-			const formData = new FormData(form);
-			console.log(formData);
+			const formData = new FormData(form)
 			
-			axios.post('http://localhost:3001/api/users', formData, { headers: { "Content-Type": "application/json" } })
+			axios.post('http://localhost:3001/api/users/register', formData, { headers: { "Content-Type": "application/json" } })
 			.then((response) => {
-				console.log(response);
+				if(response.data.emailAlreadyUsed === true) {
+					passwordError.innerHTML = `L'email inserita è già stata utilizzata in precedenza.`
+					return
+				}
+
+				sessionStorage.setItem('emailAuth', response.data.email)
+				sessionStorage.setItem('username', response.data.firstName)
+				window.location.replace('http://localhost:3000/')
+
 			})
 			.catch((error) => {
-				console.error('Error:', error);
-			});
-		};
+				console.error('Error:', error)
+			})
+		}
 	
-		form.addEventListener('submit', handleSubmit);
+		form.addEventListener('submit', handleSubmit)
 	
-		// Cleanup function
-		return () => {
-			form.removeEventListener('submit', handleSubmit);
-		};
+		return () => { form.removeEventListener('submit', handleSubmit) }
 	
-	}, []);
+	}, [])
 
 	useEffect(() => {
 
-		const submitButton = submitButtonRef.current;
-		const passwordInput = passwordInputRef.current;
-		const passwordError = passwordErrorRef.current;
+		const submitButton = submitButtonRef.current
+		const passwordInput = passwordInputRef.current
+		const passwordError = passwordErrorRef.current
 
 		passwordInput.addEventListener('input', () => {
 
@@ -135,7 +140,7 @@ import './register.css';
 				</div>
 			</section>
 		</div>
-  	);
+  	)
 }
 
-export default Register;
+export default Register
