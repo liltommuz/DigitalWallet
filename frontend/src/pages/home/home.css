@@ -4,55 +4,59 @@
     font-weight: bold;
 }
 
-.total_accounts {
-    width: 45%;
-    color: whitesmoke;
 
+.home_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.home_container .total_balance, .home_container .last_transactions {
+    width: 50%;
+}
+
+.account_balance {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    width: 80%;
     border-radius: 25px;
 
-    background-color: #5727a6;
+    background-color: rgb(88, 41, 219);
 }
 
-.total_accounts {
+.account_balance .total_amount {
     display: flex;
     flex-direction: column;
-    text-align: center;
+    justify-content: left;
+    text-align: start;
+    padding: 1rem;
 }
 
-.total_balance {
-    display: flex;
-    align-items: start;
-    margin-left: 2.5%;
-    flex-direction: column;
-    
+.account_balance .total_amount .text, .incame_expanse .text {
+    font-size: 1.2rem;
 }
 
-.total_balance .text, .incame_expanse .text {
-    
-    font-size: 1.5rem;
-}
-
-.total_balance .amount, .incame_expanse .amount {
-    font-style: italic;
-    font-size: 1.4rem;
-
-}
-
-.textTitle {
-    font-family: 'chillaxBold';
-    margin-top: 2.5%;
+.account_balance .total_amount .amount {
     font-size: 2rem;
 }
 
-.incame_expanse {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    align-items: center;
-    margin-bottom: 2.5%;
+.account_balance .textTitle {
+    font-size: 1.5rem;
+    text-align: start;
+    margin: 0 0 5% 2.5%;
 }
 
-.incame_expanse .incame, .incame_expanse .expanse {
-    flex: 50%;
+.incame_expanse {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40%;
+    padding-bottom: 1.5rem;
+}
+
+.incame_expanse .amount {
+    font-size: 1.5rem;
 }
