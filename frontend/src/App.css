@@ -16,6 +16,9 @@
 	background-color: #201c1c;
 	color: whitesmoke;
 }
+html:hover {
+	cursor: default;
+}
 
 .container {
     margin-left: 13%;

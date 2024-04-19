@@ -53,6 +53,12 @@ if(sessionStorage.getItem('emailAuth') === null) {
 			className: 'nav-text'
 		},
 		{
+			title: 'Sommario',
+			path: '/summary',
+			icon: <GrIcons.GrTransaction />,
+			className: 'nav-text'
+		},
+		{
 			title: 'Categorie',
 			path: '/categories',
 			icon: <MdIcons.MdOutlineCategory />,

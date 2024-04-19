@@ -12,6 +12,25 @@
     flex-direction: row;
 }
 
+.welcome {
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+.explore {
+    font-size: 1rem;
+}
+
+.explore .link {
+    color: whitesmoke;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.explore .link:hover {
+    cursor: grab;
+}
+
 .home_container .total_balance, .home_container .last_transactions {
     width: 50%;
 }

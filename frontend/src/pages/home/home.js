@@ -10,11 +10,18 @@ function Home() {
 			<div className='home_container'>
 				<div className='total_balance'>
 					
-					<h1>Welcome new CryptoGuru</h1>
-					<p>In this page you will see the total amount of money that you possess</p>
-					<p>and also your last transactions. With the right filters you could be</p>
-					<p>able to see the sum of the accounts selected or only a certain type of</p>
-					<p>accounts.</p>
+					<p className='welcome'>Benvenuto {sessionStorage.getItem('username')}</p>
+					<div className='explore'>
+						In questa pagina potrai controllare in maniera veloce il traffico del tuo denaro. <br />
+						Nella tabella sottostante potrai visualizzare quanti soldi hai speso e quanti ne hai guadagnati. <br />
+						Se invece desidere vedere più dettagli recati nella pagina <a className='link' onClick={() => {window.location.replace('/summary')}}>Sommario</a>.
+
+						<br /> <br />
+
+						Nella zona laterale presente sulla destra saranno disponibili le tue ultime 5 transazioni. <br />
+						Se desederi vedere più dettagli riguardanti le tue transazioni recati nella pagina <a className='link' onClick={() => {window.location.replace('/transactions')}}>Transazioni</a>.
+		
+					</div>
 
 					<br /> <br /> 
 
