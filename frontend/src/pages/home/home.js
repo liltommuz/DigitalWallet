@@ -3,6 +3,10 @@ import React from 'react';
 import './home.css';
 
 import * as IoIcons from "react-icons/io";
+import * as GiIcons from "react-icons/gi";
+import * as BiIcons from "react-icons/bi";
+import * as FaIcons from "react-icons/fa";
+import * as Fa6Icons from "react-icons/fa6";
 
 function Home() {
   	return (
@@ -53,7 +57,76 @@ function Home() {
 	
 				<div className='last_transactions'>
 					
+					<p className='title'>Ultime Transazioni</p>
 					
+					<div className='transactions_container'>
+
+						<div className='transaction'>
+							
+							<div className='heading'>
+								<div className='category'><GiIcons.GiKnifeFork /></div>
+								<div className='name'>Dinner</div>
+								<div className='amount'>€ 20,00</div>
+							</div>
+
+							<div className='date'>20-04-2024</div>
+							
+						</div>
+
+						<div className='transaction'>
+							
+							<div className='heading'>
+								<div className='category'><BiIcons.BiSolidJoystick /></div>
+								<div className='name'>Entertainment</div>
+								<div className='amount'>€ 10,00</div>
+							</div>
+
+							<div className='date'>20-04-2024</div>
+							
+						</div>
+
+						<div className='transaction'>
+							
+							<div className='heading'>
+								<div className='category'><FaIcons.FaPlane /></div>
+								<div className='name'>Travel</div>
+								<div className='amount'>€ 299,99</div>
+							</div>
+
+							<div className='date'>20-04-2024</div>
+							
+						</div>
+
+						<div className='transaction'>
+							
+							<div className='heading'>
+								<div className='category'><Fa6Icons.FaGraduationCap /></div>
+								<div className='name'>Education</div>
+								<div className='amount'>€ 34,99</div>
+							</div>
+
+							<div className='date'>20-04-2024</div>
+							
+						</div>
+
+						<div className='transaction'>
+							
+							<div className='heading'>
+								<div className='category'><IoIcons.IoMdCart /></div>
+								<div className='name'>Groceries</div>
+								<div className='amount'>€ 7,49</div>
+							</div>
+
+							<div className='date'>20-04-2024</div>
+							
+						</div>
+
+
+					</div>
+
+					
+
+
 				</div>
 						
 				

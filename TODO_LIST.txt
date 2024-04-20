@@ -1,0 +1,9 @@
+-- Database
+
+Aggiungere tabella transazioni 
+    - Categoria
+    - Importo
+    - Data
+    - Causale
+
+owo
