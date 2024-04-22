@@ -1,37 +1,47 @@
 import React from 'react';
 
+import * as BsIcons from "react-icons/bs";
+
 import './account.css'
 
 function Accounts() {
   	return (
 		<div className='container'>
 			
-	  		<h1>Welcome back _NomeUtente_</h1>
-			<p>In this page you will see the total amount of money that you possess</p>
-			<p>and also your last transactions. With the right filters you could be</p>
-			<p>able to see the sum of the accounts selected or only a certain type of</p>
-			<p>accounts.</p>
+	  		<h1>Accounts</h1>
 
-			<br /> <br /> 
+			<div className='accounts_container'>
+				<div className='header_accounts'>
 
-			<div className='total_accounts'>
-				<div className='total_balance'>
-					<p className='text'>Accounts Total:</p>
-					<p className='amount'>€ 12000</p>
-				</div>
-
-				<div className='incame_expanse'>
-					<p>Total Balance</p>
-					<div className='incame'>
-						<p>Income</p>
-						<p>0,00</p>
+					<div className='details'>
+						<div className='holder'>Tommaso</div>
+						<div className='type'>Cash</div>
 					</div>
-					<div className='expanse'>
-						<p>Expense</p>
-						<p>0,00</p>
+					<div className='icon'>
+						<BsIcons.BsCashStack /> 
 					</div>
 
+
 				</div>
+
+				<div className='info_accounts'>
+
+					<div className='total'>€ 100,00</div>
+					<div className='accounts_movments'>
+
+						<div className='incame'>
+							<p className='text'>Incame</p>
+							<p className='total'>€ 0,00</p>
+						</div>
+
+						<div className='expanse'>
+							<p className='text'>Expanse</p>
+							<p className='total'>€ 0,00</p>
+						</div>
+					</div>
+
+				</div>
+
 			</div>
 
 		</div>
