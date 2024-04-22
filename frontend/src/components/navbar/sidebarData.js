@@ -17,13 +17,13 @@ if(sessionStorage.getItem('emailAuth') === null) {
 			title: 'Login',
 			path: '/login',
 			icon: <GoIcons.GoSignIn/>,
-			className: 'nav-text'
+			className: 'nav_text'
 		},
 		{
 			title: 'Register',
 			path: '/register',
 			icon: <CgIcons.CgPushChevronRight />,
-			className: 'nav-text'
+			className: 'nav_text'
 		}
 	)
 } else {
@@ -32,43 +32,43 @@ if(sessionStorage.getItem('emailAuth') === null) {
 			title: 'Home',
 			path: '/',
 			icon: <AiIcons.AiFillHome />,
-			className: 'nav-text'
+			className: 'nav_text'
 		},
 		{
 			title: 'Accounts',
 			path: '/accounts',
 			icon: <Io5Icons.IoCard />,
-			className: 'nav-text'
+			className: 'nav_text'
 		},
 		{
 			title: 'Debiti',
 			path: '/debts',
 			icon: <GiIcons.GiPayMoney />,
-			className: 'nav-text'
+			className: 'nav_text'
 		},
 		{
 			title: 'Transazioni',
 			path: '/transactions',
 			icon: <GrIcons.GrTransaction />,
-			className: 'nav-text'
+			className: 'nav_text'
 		},
 		{
 			title: 'Sommario',
 			path: '/summary',
 			icon: <GrIcons.GrTransaction />,
-			className: 'nav-text'
+			className: 'nav_text'
 		},
 		{
 			title: 'Categorie',
 			path: '/categories',
 			icon: <MdIcons.MdOutlineCategory />,
-			className: 'nav-text'
+			className: 'nav_text'
 		},
 		{
 			title: 'Impostazioni',
 			path: '/settings',
 			icon: <IoIcons.IoMdSettings />,
-			className: 'nav-text'
+			className: 'nav_text'
 		}
 	)
 }

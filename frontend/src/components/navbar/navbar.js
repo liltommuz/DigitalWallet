@@ -45,14 +45,14 @@ function Navbar() {
                         <p className='user_name' ref={accountNameRef}>A</p>
                     </div>
                 </div>
-                <nav className='nav-menu'>
-                    <ul className='nav-menu-items'>
+                <nav className='nav_menu'>
+                    <ul className='nav_menu_items'>
                         {
                             SidebarData.map((item, index) => { return (
                                 <li key={index} className={item.className}>
                                     <Link to={item.path}>
-                                        {item.icon}
-                                        <span>{item.title}</span>
+                                        <div className='icon'>{item.icon}</div>
+                                        <div className='text'>{item.title}</div>
                                     </Link>
                                 </li>
                             )})

@@ -36,6 +36,14 @@
     width: 50%;
 }
 
+.total_balance {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 3vh;
+}
+
 .account_balance {
     display: flex;
     justify-content: center;
@@ -46,6 +54,8 @@
 
     background-color: rgb(88, 41, 219);
 }
+
+
 
 .account_balance .total_amount {
     display: flex;
@@ -136,3 +146,5 @@
     font-size: 0.7rem;
     margin-bottom: 0;
 }
+
+

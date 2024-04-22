@@ -21,6 +21,19 @@ html:hover {
 }
 
 .container {
-    margin-left: 13%;
 	height: 100%;
+}
+
+@media only screen and (min-width: 450px) and (max-width: 1059px) {
+	.container {
+		margin-left: 65px;
+		transition-duration: 0.3s;
+	}
+}
+
+@media only screen and (min-width: 1060px) {
+	.container {
+		margin-left: 215px;
+		transition-duration: 0.3s;
+	}
 }

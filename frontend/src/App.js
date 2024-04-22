@@ -21,7 +21,12 @@ function App() {
 		const currentHref = window.location.href
         const currentEmailAuth = sessionStorage.getItem('emailAuth')
 
+
 		
+		window.addEventListener('resize', () => {
+			console.log(`Height: `, window.innerHeight)
+			console.log(`Width: `, window.innerWidth)
+		})
 
         window.addEventListener('load', (event) => {
 			
