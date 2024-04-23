@@ -1,14 +1,31 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import axios from 'axios';
 
 import * as BsIcons from "react-icons/bs";
 import * as IoIcons from "react-icons/io";
 import * as ImIcons from "react-icons/im";
-import * as FaIcons from "react-icons/fa";
 import * as MdIcons from "react-icons/md";
+
 import './account.css'
 
 function Accounts() {
-  	return (
+
+	useEffect(() => {
+
+		axios.post('http://localhost:3001/api/accounts/', { emailAccount: sessionStorage.getItem('emailAuth')}, { headers: { "Content-Type": "application/json" } })
+		.then((response) => {
+			response.data.forEach( (element) => {
+				console.log(element)
+			})
+			console.log(1)
+
+		})
+
+	}, [])
+
+
+
+	return (
 		<div className='container'>
 			
 			<div className='box_container'>

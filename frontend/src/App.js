@@ -21,13 +21,6 @@ function App() {
 		const currentHref = window.location.href
         const currentEmailAuth = sessionStorage.getItem('emailAuth')
 
-
-		
-		window.addEventListener('resize', () => {
-			console.log(`Height: `, window.innerHeight)
-			console.log(`Width: `, window.innerWidth)
-		})
-
         window.addEventListener('load', (event) => {
 			
             if(currentHref !== 'http://localhost:3000/login' && [null, 'undefined'].includes(currentEmailAuth)) {
@@ -36,13 +29,6 @@ function App() {
                 
             }
         })
-
-		function handleLocationChange() {
-			console.log('Location has changed:', window.location.href);
-		}
-		  
-		  // Listen for the popstate event
-		window.addEventListener('popstate', handleLocationChange);
 
 
 	}, [])

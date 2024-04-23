@@ -19,4 +19,6 @@ server.listen(serverPort, () => {
 
 // Routes
 const { userRoutes } = require('./routes/users/user')
+const { accountRoutes } = require('./routes/accounts/account')
 server.use(userRoutes)
+server.use(accountRoutes)

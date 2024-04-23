@@ -30,9 +30,9 @@ userRoutes.post('/api/users/register', (request, response) => {
     })
 })
 
-userRoutes.delete('/api/users', (request, response) => {
+userRoutes.post('/api/users/delete', (request, response) => {
 
-    let user_id = request.body.user_id
+    const { user_id } = request.body
 
     databaseConnection.query(`DELETE FROM users WHERE id = "${user_id}";`, function (error, results) {
         if (error) throw error;
