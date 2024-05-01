@@ -65,3 +65,21 @@
     font-size: 1.2rem;
 }
 
+.add {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 2.5%;
+    border-radius: 25px;
+    font-size: 5rem;
+    padding: 1rem;
+    background-color: rgb(88, 41, 219);
+    transform: scale(1);
+    transition-duration: 0.3s;
+}
+
+.add:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 1rem 0 rgb(86, 69, 133);
+    transition-duration: 0.3s;
+}

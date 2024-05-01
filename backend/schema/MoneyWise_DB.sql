@@ -22,7 +22,7 @@ USE `money_wise`;
 -- Dump della struttura di tabella money_wise.accounts
 CREATE TABLE IF NOT EXISTS `accounts` (
   `account_id` int(11) NOT NULL AUTO_INCREMENT,
-  `typology` varchar(255) NOT NULL CHECK (`typology` in ('Wallet','Bank','Savings')),
+  `typology` varchar(255) NOT NULL CHECK (`typology` in ('Cash','Bank','Savings', 'Card')),
   `name` varchar(255) NOT NULL,
   `amount` decimal(15,2) NOT NULL,
   `user_id` int(11) NOT NULL,

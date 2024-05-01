@@ -1,0 +1,42 @@
+
+.form_accounts_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.form_accounts_container .create_accounts {
+    display: flex;
+    background-color: gray;
+    width: 60%;
+    border-radius: 25px;
+    padding: 2rem;
+}
+
+.form_accounts_container .create_accounts .inputs_accounts_container {
+    display: flex;
+    flex-direction: column;
+    gap: 4vh;
+    width: 100%;
+}
+
+.form_accounts_container .create_accounts .inputs_accounts_container .input_container .label {
+    font-size: 1.5rem;
+}
+
+
+.form_accounts_container .create_accounts .inputs_accounts_container .input_container .input {
+    width: 80%;
+    height: 70%;
+
+    padding: 0.3rem;
+    font-size: 1.2rem;
+}
+
+.form_accounts_container .create_accounts .button_accounts_container .button_accounts {
+    padding: 0.7rem;
+    font-size: 1.5rem;
+    width: 80%;
+    margin: 5vh 0 2vh 0;
+}

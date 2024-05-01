@@ -27,6 +27,7 @@ accountRoutes.post('/api/accounts/', (request, response) => {
         if(results.length == 0) return response.send({ error: "UserAccountNotFound" })
         const userId = results[0].id
         databaseConnection.query(`SELECT * FROM accounts WHERE user_id = ${userId};`, function (error, results) {
+            console.log(results)
             if(results.length == 0) return response.send({ information: "NoAccountCreated" })
             return response.send(results)
 
