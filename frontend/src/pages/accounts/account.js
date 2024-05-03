@@ -79,6 +79,46 @@ function Accounts() {
 			<div className='box_container'>
 				{accountsArray}
 			</div>
+			<div className='overlay'></div>
+			<div className='edit_form'>
+				<div className='form_edit_accounts_container'>
+
+					<form className="create_edit_accounts" id="form_edit_accounts" method="post">
+						<div className='inputs_edit_accounts_container'>
+							<div className='input_container'>
+								<p className='label'>Account Name</p>
+								<input type='text' name='edit_accounts_name' className='input' placeholder={'Account Name'} required></input>
+							</div>
+
+							<div className='input_container'>
+								<p className='label'>Account Typology</p>
+								<select name='edit_accounts_typology' className='input' required>
+									
+									<option value={'Cash'}>Cash</option>
+									<option value={'Bank'}>Bank</option>
+									<option value={'Savings'}>Savings</option>
+									<option value={'Card'}>Card</option>
+
+								</select>
+							</div>
+							
+							<div className='input_container'>
+								<p className='label'>Account Amount</p>
+								<input type="text" name="edit_accounts_amount" className="input" defaultValue={0} min={0} pattern="[0-9]+(\.[0-9]+)?" />
+							</div>
+
+							<div className='button_edit_accounts_container'>
+
+								<button type='submit' className='button_edit_accounts'>Confirm</button>
+
+							</div>
+
+						</div>
+					</form>
+
+				</div>
+			</div>
+
 			
 			<div ref={buttonRef}>
                 <IoIcons.IoMdAdd className='add' />
