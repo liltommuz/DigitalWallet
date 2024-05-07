@@ -13,9 +13,21 @@ import './account.css'
 function Accounts() {
 
 	const [accountsArray, setAccountsArray] = useState([]);
+	const [selectedAccount, setSelectedAccount] = useState(null);
+
 	const buttonRef = useRef(null)
+	const editFormRef = useRef(null)
 
 	useEffect(() => {
+		const handleOutsideClick = (event) => {
+            if (editFormRef.current && !editFormRef.current.contains(event.target)) {
+                // Clicked outside the edit form
+                setSelectedAccount(null); // Close the form
+            }
+        };
+
+
+        
 
 		axios.post('http://localhost:3001/api/accounts/', { emailAccount: sessionStorage.getItem('emailAuth')}, { headers: { "Content-Type": "application/json" } })
 		.then((response) => {
@@ -28,11 +40,18 @@ function Accounts() {
 			}
 
 			const accounts = response.data.map((account, index) => {
+
+
 				const { typology, name, amount } = account;
 				const key = `${typology}-${index}`;
+
+				const handleAccountClick = (account) => {
+					setSelectedAccount(account);
+				};
+				
 	  
 				return (
-				  	<div className='accounts_container' key={key}>
+				  	<div className='accounts_container' key={key} onClick={handleAccountClick}>
 						<div className='header_accounts'>
 					  		<div className='details'>
 								<div className='holder'>{name}</div>
@@ -55,6 +74,7 @@ function Accounts() {
 						</div>
 				  	</div>
 				);
+
 			});
 	  
 			setAccountsArray(accounts);
@@ -68,10 +88,10 @@ function Accounts() {
         }
 
         current_button.addEventListener('click', openForm)
-        return () => { current_button.removeEventListener('click', openForm) }
+		document.addEventListener('click', handleOutsideClick);
 
 	}, [])
-
+	
 
 	return (
 		<div className='container'>
@@ -79,20 +99,57 @@ function Accounts() {
 			<div className='box_container'>
 				{accountsArray}
 			</div>
-			<div className='overlay'></div>
-			<div className='edit_form'>
-				<div className='form_edit_accounts_container'>
 
-					<form className="create_edit_accounts" id="form_edit_accounts" method="post">
-						<div className='inputs_edit_accounts_container'>
+			<div className='overlay'></div>
+			
+			<div className='edit_form'>
+				<div className='form_edit_accounts_container' ref={editFormRef}>
+				{selectedAccount && (
+					<div className='edit_form'>
+						<div className='form_edit_accounts_container'>
+							<form className="create_edit_accounts" id="form_edit_accounts" method="post">
+								<div className='inputs_edit_accounts_container'>
+									<div className='input_container'>
+										<p className='label'>Account Name</p>
+										<input type='text' name='edit_accounts_name' className='input' placeholder={'Account Name'} value={selectedAccount.name} required ></input>
+									</div>
+									<div className='input_container'>
+										<p className='label'>Account Typology</p>
+										<select name='edit_accounts_typology' className='input' required defaultValue={selectedAccount.typology}>
+											<option value={'Cash'}>Cash</option>
+											<option value={'Bank'}>Bank</option>
+											<option value={'Savings'}>Savings</option>
+											<option value={'Card'}>Card</option>
+										</select>
+									</div>
+									<div className='input_container'>
+										<p className='label'>Account Amount</p>
+										<input type="text" name="edit_accounts_amount" className="input" defaultValue={selectedAccount.amount} min={0} pattern="[0-9]+(\.[0-9]+)?" />
+									</div>
+									<div className='button_edit_accounts_container'>
+										<button type='submit' className='button_edit_accounts'>Confirm</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+            		)}
+				</div>
+			</div>
+
+			{/* <div className='add_form'>
+				<div className='form_add_accounts_container'>
+
+					<form className="create_add_accounts" id="form_add_accounts" method="post">
+						<div className='inputs_add_accounts_container'>
 							<div className='input_container'>
 								<p className='label'>Account Name</p>
-								<input type='text' name='edit_accounts_name' className='input' placeholder={'Account Name'} required></input>
+								<input type='text' name='add_accounts_name' className='input' placeholder={'Account Name'} required></input>
 							</div>
 
 							<div className='input_container'>
 								<p className='label'>Account Typology</p>
-								<select name='edit_accounts_typology' className='input' required>
+								<select name='add_accounts_typology' className='input' required>
 									
 									<option value={'Cash'}>Cash</option>
 									<option value={'Bank'}>Bank</option>
@@ -104,12 +161,12 @@ function Accounts() {
 							
 							<div className='input_container'>
 								<p className='label'>Account Amount</p>
-								<input type="text" name="edit_accounts_amount" className="input" defaultValue={0} min={0} pattern="[0-9]+(\.[0-9]+)?" />
+								<input type="text" name="add_accounts_amount" className="input" defaultValue={0} min={0} pattern="[0-9]+(\.[0-9]+)?" />
 							</div>
 
-							<div className='button_edit_accounts_container'>
+							<div className='button_add_accounts_container'>
 
-								<button type='submit' className='button_edit_accounts'>Confirm</button>
+								<button type='submit' className='button_add_accounts'>Confirm</button>
 
 							</div>
 
@@ -117,7 +174,7 @@ function Accounts() {
 					</form>
 
 				</div>
-			</div>
+			</div> */}
 
 			
 			<div ref={buttonRef}>
