@@ -135,7 +135,7 @@ import './register.css'
 					</form>
 
 					<p className="already">hai già un account?
-						<a href="http://localhost:3000/login" onClick={() => {window.location.replace('http://localhost:3000/login')}} className='link'> Accedi</a>
+						<span onClick={() => {window.location.replace('http://localhost:3000/login')}} className='link'> Accedi</span>
 					</p>
 				</div>
 			</section>

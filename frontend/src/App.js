@@ -11,7 +11,6 @@ import Transactions from './pages/transactions/transactions'
 import Login from './pages/userAccount/login/login';
 import Register from './pages/userAccount/register/register';
 import Navbar from './components/navbar/navbar';
-import FormAddAccount from './components/forms/accounts/addAccount';
 
 function App() {
 
@@ -44,10 +43,6 @@ function App() {
 					<Route path='/transactions' element={<Transactions />} />
 					<Route path='/login' element={<Login />} />
 					<Route path='/register' element={<Register />} />
-
-					// Routes for form creations
-					<Route path='/accounts_create' element={ <FormAddAccount />}/>
-
 				</Routes>
 			</Router>
 			</>

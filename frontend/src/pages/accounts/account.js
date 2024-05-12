@@ -21,29 +21,20 @@ function Accounts() {
 	const overlayRef = useRef(null)
 
 	useEffect(() => {
-		
-		const overlay = overlayRef.current;
-		const buttonShow = buttonShowRef.current;
-        
 
 		axios.post('http://localhost:3001/api/accounts/', { emailAccount: sessionStorage.getItem('emailAuth')}, { headers: { "Content-Type": "application/json" } })
 		.then((response) => {
 			
-			const iconObj = {
-				"Cash":		<BsIcons.BsCashStack />,
-				"Bank": 	<BsIcons.BsBank2 />,
-				"Card": 	<ImIcons.ImCreditCard />,
-				"Savings": 	<MdIcons.MdSavings /> 
-			}
+			const iconObj = { "Cash": <BsIcons.BsCashStack />, "Bank": <BsIcons.BsBank2 />, "Card": <ImIcons.ImCreditCard />, "Savings": 	<MdIcons.MdSavings /> }
 
 			const accounts = response.data.map((account, index) => {
 
-
 				const { typology, name, amount } = account;
-				const key = `${typology}-${index}`;
+				const key = `${index + 1}`;
 
 				const handleAccountClick = (event, account) => {
 					event.stopPropagation();
+					account.key = key
 					setSelectedAccount(account);
 					overlay.style.display = 'block'
 				};
@@ -79,6 +70,17 @@ function Accounts() {
 			setAccountsArray(accounts);
 
 		})
+		
+		const overlay = overlayRef.current;
+		const buttonShow = buttonShowRef.current;
+        // const buttonSubmitEdit = buttonSubmitEditRef.current
+		// const editForm = editFormRef.current
+
+		// function handleEditSubmit(event) {
+		// 	event.stopPropagation();
+		// 	const formData = new FormData(editForm)
+		// }
+		
 
 		
 
@@ -129,6 +131,9 @@ function Accounts() {
 						<div className='form_edit_accounts_container'>
 							<form className="create_edit_accounts" id="form_edit_accounts" method="post">
 								<div className='inputs_edit_accounts_container'>
+
+									<input type='text' defaultValue={selectedAccount.key} name='accountId' style={{display:'none'}}></input>
+
 									<div className='input_container'>
 										<p className='label'>Account Name</p>
 										<input type='text' name='edit_accounts_name' className='input' placeholder={'Account Name'} value={selectedAccount.name} required ></input>

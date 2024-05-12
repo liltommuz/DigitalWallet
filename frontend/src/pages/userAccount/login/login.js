@@ -73,7 +73,7 @@ function Login() {
 
         
                     		<p className="already">Non hai un account?
-                        		<a onClick={() => {window.location.replace('http://localhost:3000/register')}} className='link'> Registrati</a>
+                        		<span onClick={() => {window.location.replace('http://localhost:3000/register')}} className='link'> Registrati</span>
                     		</p>
 
                 		</form>

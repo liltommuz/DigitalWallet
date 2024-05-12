@@ -21,12 +21,12 @@ function Home() {
 						<div className='explore'>
 							In questa pagina potrai controllare in maniera veloce il traffico del tuo denaro. <br />
 							Nella tabella sottostante potrai visualizzare quanti soldi hai speso e quanti ne hai guadagnati. <br />
-							Se invece desidere vedere più dettagli recati nella pagina <a className='link' onClick={() => {window.location.replace('/summary')}}>Sommario</a>.
+							Se invece desidere vedere più dettagli recati nella pagina <span className='link' onClick={() => {window.location.replace('/summary')}}>Sommario</span>.
 
 							<br /> <br />
 
 							Nella zona laterale presente sulla destra saranno disponibili le tue ultime 5 transazioni. <br />
-							Se desederi vedere più dettagli riguardanti le tue transazioni recati nella pagina <a className='link' onClick={() => {window.location.replace('/transactions')}}>Transazioni</a>.
+							Se desederi vedere più dettagli riguardanti le tue transazioni recati nella pagina <span className='link' onClick={() => {window.location.replace('/transactions')}}>Transazioni</span>.
 			
 						</div>
 
@@ -59,11 +59,8 @@ function Home() {
 					</div>
 		
 					<div className='last_transactions'>
-						
 						<p className='title'>Ultime Transazioni</p>
-						
 						<div className='transactions_container'>
-
 							<div className='transaction'>
 								
 								<div className='heading'>
@@ -71,63 +68,51 @@ function Home() {
 									<div className='name'>Dinner</div>
 									<div className='amount'>€ 20,00</div>
 								</div>
-
 								<div className='date'>20-04-2024</div>
 								
 							</div>
 
 							<div className='transaction'>
-								
 								<div className='heading'>
 									<div className='category'><BiIcons.BiSolidJoystick /></div>
 									<div className='name'>Entertainment</div>
 									<div className='amount'>€ 10,00</div>
 								</div>
-
 								<div className='date'>20-04-2024</div>
 								
 							</div>
 
 							<div className='transaction'>
-								
 								<div className='heading'>
 									<div className='category'><FaIcons.FaPlane /></div>
 									<div className='name'>Travel</div>
 									<div className='amount'>€ 299,99</div>
 								</div>
-
 								<div className='date'>20-04-2024</div>
 								
 							</div>
 
 							<div className='transaction'>
-								
 								<div className='heading'>
 									<div className='category'><Fa6Icons.FaGraduationCap /></div>
 									<div className='name'>Education</div>
 									<div className='amount'>€ 34,99</div>
 								</div>
-
 								<div className='date'>20-04-2024</div>
 								
 							</div>
 
 							<div className='transaction'>
-								
 								<div className='heading'>
 									<div className='category'><IoIcons.IoMdCart /></div>
 									<div className='name'>Groceries</div>
 									<div className='amount'>€ 7,49</div>
 								</div>
-
 								<div className='date'>20-04-2024</div>
 								
 							</div>
-
 						</div>
-
 					</div>
-
 				</div>
 
 			</IconContext.Provider>
