@@ -35,4 +35,21 @@ accountRoutes.post('/api/accounts/', (request, response) => {
     })
 })
 
+accountRoutes.post('/api/accounts/update', (request, response) => {
+    const { accounts_typology, accounts_name, accounts_amount, emailAccount } = request.body
+    databaseConnection.query(`SELECT id FROM users WHERE email = "${emailAccount}";`, function (error, results) {
+        if(results.length == 0) return response.send({ error: "AccountNotFound" })
+        const userId = results[0].id
+
+        databaseConnection.query(`UPDATE accounts SET 
+        `, function (error, result) {
+            if(error) throw error 
+            console.log('daje')
+            return response.send(true)
+
+        })
+
+    })
+})
+
 module.exports = { accountRoutes }
