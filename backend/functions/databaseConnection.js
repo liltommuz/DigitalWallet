@@ -6,7 +6,7 @@ function getDatabaseConnection() {
     const databaseConnection = mysql.createConnection({
         host: 'localhost',
         user: 'root',
-        password: '',
+        password: 'root',
         database: 'money_wise',
         port: 3306
     })

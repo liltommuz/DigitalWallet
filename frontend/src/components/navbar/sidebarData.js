@@ -41,27 +41,9 @@ if(sessionStorage.getItem('emailAuth') === null) {
 			className: 'nav_text'
 		},
 		{
-			title: 'Debiti',
-			path: '/debts',
-			icon: <GiIcons.GiPayMoney />,
-			className: 'nav_text'
-		},
-		{
 			title: 'Transazioni',
 			path: '/transactions',
 			icon: <GrIcons.GrTransaction />,
-			className: 'nav_text'
-		},
-		{
-			title: 'Sommario',
-			path: '/summary',
-			icon: <GrIcons.GrTransaction />,
-			className: 'nav_text'
-		},
-		{
-			title: 'Categorie',
-			path: '/categories',
-			icon: <MdIcons.MdOutlineCategory />,
 			className: 'nav_text'
 		},
 		{
