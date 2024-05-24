@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=114 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 
 
@@ -68,9 +68,9 @@ CREATE TABLE IF NOT EXISTS `transactions` (
 INSERT INTO `users` (`id`, `firstName`, `lastName`, `email`, `password`) VALUES
 	(1, 'Tommaso', 'Fatticcioni', 'fatticcionitommaso@gmail.com', 'Pippo1'),
 	(2, 'Nicola', 'Boh', 'alzyontop@gmail.com', 'Pluto1'),
-	(111, 'Federico', 'Locci', 'test@gmail.com', 'Ciaociao1'),
-	(112, 'Federico', 'Locci', 'test2@gmail.com', 'Ciaociao1'),
-	(113, 'Francesco', 'Caianiello', 'giofracai@gmail.com', 'Ciaociao1');
+	(3, 'Federico', 'Locci', 'test@gmail.com', 'Ciaociao1'),
+	(4, 'Federico', 'Locci', 'test2@gmail.com', 'Ciaociao1'),
+	(5, 'Francesco', 'Caianiello', 'giofracai@gmail.com', 'Ciaociao1');
 
 INSERT INTO `accounts` (`account_id`, `typology`, `name`, `amount`, `user_id`) VALUES
 	(1, 'Cash', 'Portafoglio', 15.00, 1),

@@ -72,6 +72,10 @@ function Transactions() {
 
 
 			</div>
+
+			<div>
+                <IoIcons.IoMdAdd className='add' />
+            </div>
 			
 		</div>
   	);

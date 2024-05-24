@@ -1,7 +1,7 @@
 .box_container {
     display: grid;
-    grid-template-columns: repeat(3, 30rem);
-    gap: 5%;
+    grid-template-columns: repeat(2, 50rem);
+    gap: 5vh;
 }
 
 
