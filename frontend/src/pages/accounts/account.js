@@ -27,13 +27,13 @@ function Accounts() {
 		const handleAccountClick = (event, account) => {
 			event.stopPropagation()
 
-			sessionStorage.setItem('edit_name', account.name)
-			sessionStorage.setItem('edit_amount', account.amount)
-			sessionStorage.setItem('edit_typology', account.typology)
-			sessionStorage.setItem('edit_key', account.account_id)
+			// sessionStorage.setItem('edit_name', account.name)
+			// sessionStorage.setItem('edit_amount', account.amount)
+			// sessionStorage.setItem('edit_typology', account.typology)
+			// sessionStorage.setItem('edit_key', account.account_id)
 			
-			overlay.style.display = 'block'
-			setEditShow(true)
+			// overlay.style.display = 'block'
+			// setEditShow(true)
 		}
 
 		const handleAddClick = (event) => {
@@ -76,15 +76,25 @@ function Accounts() {
 						</div>
 						<div className='info_accounts'>
 							<div className='total_amount'>€ {amount}</div>
-							<div className='accounts_movments'>
-								<div className='incame'>
-									<p className='text'><IoIcons.IoMdArrowRoundUp fill='green' className='arrow'/>Incame</p>
-									<p className='total'>€ 0,00</p>
+
+							<div className='information_container'>
+
+								<div className='accouts_information'>
+									<div className='incame'>
+										<p className='text'><IoIcons.IoMdArrowRoundUp fill='green' className='arrow'/>Incame</p>
+										<p className='total'>€ 0,00</p>
+									</div>
+									<div className='expense'>
+										<p className='text'><IoIcons.IoMdArrowRoundDown fill='red' className='arrow'/>Expense</p>
+										<p className='total'>€ 0,00</p>
+									</div>
 								</div>
-								<div className='expense'>
-									<p className='text'><IoIcons.IoMdArrowRoundDown fill='red' className='arrow'/>Expense</p>
-									<p className='total'>€ 0,00</p>
+
+								<div className='buttonSettings'>
+									<button className='accounts_options'>SETTINGS</button>
 								</div>
+
+
 							</div>
 						</div>
 					</div>
