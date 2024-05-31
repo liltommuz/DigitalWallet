@@ -27,13 +27,18 @@ function Accounts() {
 		const handleAccountClick = (event, account) => {
 			event.stopPropagation()
 
-			sessionStorage.setItem('edit_name', account.name)
-			sessionStorage.setItem('edit_amount', account.amount)
-			sessionStorage.setItem('edit_typology', account.typology)
-			sessionStorage.setItem('edit_key', account.account_id)
+			// sessionStorage.setItem('edit_name', account.name)
+			// sessionStorage.setItem('edit_amount', account.amount)
+			// sessionStorage.setItem('edit_typology', account.typology)
+			// sessionStorage.setItem('edit_key', account.account_id)
 			
+<<<<<<< HEAD
 			overlay.style.display = 'block'
 			setEditShow(false)
+=======
+			// overlay.style.display = 'block'
+			// setEditShow(true)
+>>>>>>> 3202f9670bc95c0f50dfe8cab7233bbf3a3c04cc
 		}
 
 		const handleAddClick = (event) => {
@@ -76,17 +81,38 @@ function Accounts() {
 						</div>
 						<div className='total_amount'>€ {amount}</div>
 						<div className='info_accounts'>
+<<<<<<< HEAD
 
 							<div className='accounts_movments'>
 								<div className='incame'>
 									<p className='text'><IoIcons.IoMdArrowRoundUp fill='green' className='arrow'/>Incame</p>
 									<p className='total'>€ 0,00</p>
+=======
+							<div className='total_amount'>€ {amount}</div>
+
+							<div className='information_container'>
+
+								<div className='accouts_information'>
+									<div className='incame'>
+										<p className='text'><IoIcons.IoMdArrowRoundUp fill='green' className='arrow'/>Incame</p>
+										<p className='total'>€ 0,00</p>
+									</div>
+									<div className='expense'>
+										<p className='text'><IoIcons.IoMdArrowRoundDown fill='red' className='arrow'/>Expense</p>
+										<p className='total'>€ 0,00</p>
+									</div>
+>>>>>>> 3202f9670bc95c0f50dfe8cab7233bbf3a3c04cc
 								</div>
-								<div className='expense'>
-									<p className='text'><IoIcons.IoMdArrowRoundDown fill='red' className='arrow'/>Expense</p>
-									<p className='total'>€ 0,00</p>
+
+								<div className='buttonSettings'>
+									<button className='accounts_options'>SETTINGS</button>
 								</div>
+<<<<<<< HEAD
 								
+=======
+
+
+>>>>>>> 3202f9670bc95c0f50dfe8cab7233bbf3a3c04cc
 							</div>
 
 							<div className='button_edit_container'>

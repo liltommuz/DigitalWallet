@@ -27,16 +27,16 @@
 
 .accounts_container .header_accounts .details .holder {
     font-weight: 500;
-    font-size: 1.5rem;
+    font-size: 3rem;
 }
 
 .accounts_container .header_accounts .details .type {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: gray;
 }
 
 .accounts_container .header_accounts .icon {
-    font-size: 1.5rem;
+    font-size: 3rem;
 }
 
 
