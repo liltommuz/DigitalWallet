@@ -33,13 +33,13 @@ function Accounts() {
 			sessionStorage.setItem('edit_key', account.account_id)
 			
 			overlay.style.display = 'block'
-			setEditShow(true)
+			setEditShow(false)
 		}
 
 		const handleAddClick = (event) => {
 			event.stopPropagation()
 			overlay.style.display = 'block'
-			setAddShow(true)
+			setAddShow(false)
 
 		}
 
@@ -74,8 +74,9 @@ function Accounts() {
 							</div>
 							<div className='icon'> {iconObj[typology]} </div>
 						</div>
+						<div className='total_amount'>€ {amount}</div>
 						<div className='info_accounts'>
-							<div className='total_amount'>€ {amount}</div>
+
 							<div className='accounts_movments'>
 								<div className='incame'>
 									<p className='text'><IoIcons.IoMdArrowRoundUp fill='green' className='arrow'/>Incame</p>
@@ -85,7 +86,13 @@ function Accounts() {
 									<p className='text'><IoIcons.IoMdArrowRoundDown fill='red' className='arrow'/>Expense</p>
 									<p className='total'>€ 0,00</p>
 								</div>
+								
 							</div>
+
+							<div className='button_edit_container'>
+								<button className='edit_options'>SETTINGS</button>
+							</div>
+
 						</div>
 					</div>
 				);
